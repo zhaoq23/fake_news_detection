@@ -10,6 +10,7 @@ This project aims to create a scalable tool that detects and classifies fake new
 # 2. Methodology and Data Preprocessing
 ## 2.1. Methodology
 We adhere to a structured approach consisting of data pre-processing, feature engineering, classification, and analysis. The detailed steps are as follows:
+
 <img src="https://github.com/user-attachments/assets/d44fd337-1029-4b7b-9fc6-c5893aee7a3b" width="500"/>
 
 ## 2.2. Data Preprocessing
@@ -145,7 +146,7 @@ In this section, we try to modify the hyper-parameter of selected models.
 
 ### 4.2.1. Decision Tree
 #### 4.2.1.1. Max Depth
-The 'max_depth' parameter in a Decision Tree is crucial for fake news detection as it controls the tree's complexity and helps prevent overfitting. By limiting the depth, the model avoids becoming too complex and fitting noise in the training data, which improves its generalization to new articles. It also enhances training efficiency and interpretability, making it easier to understand and validate the model's decisions. Properly tuning 'max_depth' ensures a balance between accuracy and practicality in detecting fake news.
+The **max_depth** parameter in a Decision Tree is crucial for fake news detection as it controls the tree's complexity and helps prevent overfitting. By limiting the depth, the model avoids becoming too complex and fitting noise in the training data, which improves its generalization to new articles. It also enhances training efficiency and interpretability, making it easier to understand and validate the model's decisions. Properly tuning **max_depth** ensures a balance between accuracy and practicality in detecting fake news.
 
 **TF-IDF**
 ![image-20240518003827268](https://github.com/user-attachments/assets/967d1e7f-cdab-4cbf-97f2-42622aa47e79)
@@ -182,7 +183,7 @@ Limiting the depth of the decision tree (Max_depth = 20) improves performance me
 
 ### 4.2.2. Logistic Regression
 #### 4.2.2.1. Regularization Parameter - C
-The 'C' parameter in Logistic Regression is crucial for fake news detection as it controls the regularization strength. Regularization helps prevent overfitting by penalizing large coefficients, thus making the model more generalizable to unseen data. A smaller 'C' value implies stronger regularization, leading to simpler models that might underfit the data. Conversely, a larger 'C' value reduces regularization, allowing the model to fit the training data more closely, but risking overfitting. Properly tuning 'C' helps balance the trade-off between bias and variance, ensuring the model accurately classifies new articles as fake or real.
+The **C** parameter in Logistic Regression is crucial for fake news detection as it controls the regularization strength. Regularization helps prevent overfitting by penalizing large coefficients, thus making the model more generalizable to unseen data. A smaller **C** value implies stronger regularization, leading to simpler models that might underfit the data. Conversely, a larger **C** value reduces regularization, allowing the model to fit the training data more closely, but risking overfitting. Properly tuning **C** helps balance the trade-off between bias and variance, ensuring the model accurately classifies new articles as fake or real.
 
 **TF-IDF**
 ![1750360661642](https://github.com/user-attachments/assets/0882b0bf-6b32-4d73-8504-d5edb78c0cdc)
