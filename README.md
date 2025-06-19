@@ -2,6 +2,27 @@
 ## Fake News Detection
 <img src="https://github.com/user-attachments/assets/6936d7c2-76e9-4ed8-9322-8a307df2fc8d" width="400"/>
 
+# Table of Contents
+1. [Problem Statement](#problem-statement)<br>
+2. [Methodology and Data Preprocessing](#methodology-and-data-preprocessing)<br>
+   	2.1. [Methodology](#methodology)<br>
+   	2.2. [Data Preprocessing](#data-preprocessing)<br>
+3. [Feature Engineering](#feature-engineering)<br>
+	3.1. [Feature Extraction](#feature-extraction)<br>
+	3.2. [Feature Selection](#feature-selection)<br>
+ 	3.3. [Classification](#classification)<br>
+4. [Analysis](#analysis)<br>
+	4.1. [Initial Result without Hyper Parameter Modifying](#initial-result-without-hyper-parameter-modifying)<br>
+	4.2. [Further Result with Selected Hyper-Parameter Modifying](#further-result-with-selected-hyper-parameter-modifying)<br>
+    4.3. [A discussion about high training accuracy](#a-discussion-about-high-training-accuracy)<br>
+5. [Conclusion](#conclusion)<br>
+   	5.1. [Our finding for models](#key-insights)<br>
+    5.2. [Limitation of data](#limitation-of-data)<br>
+    5.3. [Further Investigate](#further-investigate)<br>
+6. [Reference](#reference)<br>
+   	6.1. [Data Source](#data-source)<br>
+    6.2. [Articles](#articles)<br>
+
 # 1. Problem Statement
 Misinformation in the media, exemplified by events like the Arab Spring, can influence public opinion and incite social unrest. Traditional verification methods, reliant on human effort, struggle with the vast volume of online content.
 
@@ -263,3 +284,25 @@ Perfect training accuracy indicates a low bias model with high variance. While t
   
 By incorporating these advanced feature extraction techniques, leveraging cutting-edge model architectures, and employing robust ensemble and optimization strategies, you can significantly improve the accuracy and reliability of your fake news detection system.
 
+# 6. Reference
+## 6.1. Data Source
+[William Lifferth. (2018). *Fake News*. Kaggle](https://www.kaggle.com/c/smm-hw2-fakenewsdetecion/data)
+
+## 6.2. Articles
+Aldwairi, M., & Alwahedi, A. (2018). Detecting fake news in social media networks. Procedia Computer Science, 141, 215222.
+
+Ahmed, A. A. A., Aljabouh, A., Donepudi, P. K., & Choi, M. S. (2021). Detecting fake news using machine learning: A systematic literature review. arXiv preprint arXiv:2102.04458.
+
+Ahmed, H., Traore, I., & Saad, S. (2017). Detection of online fake news using n-gram analysis and machine learning techniques. In Intelligent, Secure, and Dependable Systems in Distributed and Cloud Environments: First International Conference, ISDDC 2017, Vancouver, BC, Canada, October 26-28, 2017, Proceedings 1 (pp. 127-138). Springer International Publishing.
+
+Baarir, N. F., & Djeffal, A. (2021, February). Fake news detection using machine learning. In 2020 2nd International workshop on human-centric smart environments for health and well-being (IHSH) (pp. 125-130). IEEE.
+
+Ghanem, B., Rosso, P., & Rangel, F. (2018, November). Stance detection in fake news a combined feature representation. In Proceedings of the first workshop on fact extraction and VERification (FEVER) (pp. 66-71).
+
+Khanam, Z., Alwasel, B. N., Sirafi, H., & Rashid, M. (2021, March). Fake news detection using machine learning approaches. In IOP conference series: materials science and engineering (Vol. 1099, No. 1, p. 012040). IOP Publishing.
+
+Lo, S. (2018). Detecting Fake News Using Stance-Based Approach (Doctoral dissertation, Fordham University).
+
+Mahir, E. M., Akhter, S., & Huq, M. R. (2019, June). Detecting fake news using machine learning and deep learning algorithms. In 2019 7th international conference on smart computing & communications (ICSCC) (pp. 1-5). IEEE.
+
+Zhang, X., & Ghorbani, A. A. (2020). An overview of online fake news: Characterization, detection, and discussion. Information Processing & Management, 57(2), 102025.
