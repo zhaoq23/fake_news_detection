@@ -50,11 +50,8 @@ We adhere to a structured approach consisting of data pre-processing, feature en
     -  Word Cloud for Titles: This image highlights the most prominent words used in titles or headings. Key terms include "Trump," "Hillary," "Clinton," and "Obama," indicating a political context. Other significant words such as "America," "President," "Russia," and "Media" suggest topics related to international relations, leadership, and news coverage. The size of the words "Trump" and "Hillary" suggests they are among the most frequently mentioned, pointing to a dataset possibly from the time around the 2016 U.S. Presidential election.
     
     - Word Cloud for Stemmed Texts: This cloud shows stemmed versions of words (base forms), which aids in grouping similar terms together, enhancing the text analysis by consolidating different forms of a word into a single representation. Dominant terms here include "Trump," "state," "presid" (likely stemming from "president"), and "peopl" (stemmed from "people"). This visualization emphasizes themes similar to the first cloud but from a broader textual analysis, potentially from article bodies or extensive texts discussing similar political themes.
-**Word Cloud for Titles**
-![image-20240519173011029](https://github.com/user-attachments/assets/d9700ec4-143b-4c56-82bc-001b11e20194)
-
-**Word Cloud for Stemmed Text**
-![image-20240519173023887](https://github.com/user-attachments/assets/ebd46cc9-58ab-479e-9d2e-385ae27f20a6)
+<img src="https://github.com/user-attachments/assets/d9700ec4-143b-4c56-82bc-001b11e20194" width="400"/>
+<img src="https://github.com/user-attachments/assets/ebd46cc9-58ab-479e-9d2e-385ae27f20a6" width="400"/>
 
 # 3. Feature Engineering
 ## 3.1. Feature Extraction
@@ -67,7 +64,9 @@ Furthermore, we have extracted additional attributes such as:
     - Ratio of no_title: 0.02599
 - **check whether the news have author**
     - Ratio of no_author: 0.0866
+      
 ![1716161545988](https://github.com/user-attachments/assets/985a276a-ec63-4b96-b695-41d77cac803f)
+![1716161545988](https://github.com/user-attachments/assets/ab1b2b6e-f80e-4d17-9722-3cb0841e794a)
 
 - **check whether the news have source**
     - Ratio of no_source: 0.5558
