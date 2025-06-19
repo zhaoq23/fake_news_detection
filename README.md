@@ -143,6 +143,87 @@ In conclusion, Logistic Regression and SVC stand out as the most effective model
 ## 4.2. Further Result with Selected Hyper-Parameter Modifying
 In this section, we try to modify the hyper-parameter of selected models.
 
+### 4.2.1. Decision Tree
+#### 4.2.1.1. Max Depth
+The 'max_depth' parameter in a Decision Tree is crucial for fake news detection as it controls the tree's complexity and helps prevent overfitting. By limiting the depth, the model avoids becoming too complex and fitting noise in the training data, which improves its generalization to new articles. It also enhances training efficiency and interpretability, making it easier to understand and validate the model's decisions. Properly tuning 'max_depth' ensures a balance between accuracy and practicality in detecting fake news.
+
+**TF-IDF**
+![image-20240518003827268](https://github.com/user-attachments/assets/967d1e7f-cdab-4cbf-97f2-42622aa47e79)
+
+**Combined**
+![image-20240518003849975](https://github.com/user-attachments/assets/ae2b6edc-d6fb-404f-b31c-04ccaad13e3c)
+
+**TF-IDF Accuracy vs Max Depth**
+- **Training Accuracy**: Increases steadily with increasing depth, reaching almost 1.0, indicating the model fits the training data perfectly at higher depths.
+- **Validation Accuracy**: Peaks around a depth of 10-15, then slightly decreases or stabilizes, suggesting the model starts overfitting beyond this point.
+- **Testing Accuracy**: Follows a similar pattern to validation accuracy, peaking around the same depth and then stabilizing or slightly decreasing.
+  
+**Combined Accuracy vs Max Depth**
+- **Training Accuracy:** Also increases with depth, though slightly less steeply than TF-IDF. - **Validation Accuracy:** Peaks around a depth of 10-15 and then shows a slight decrease or plateau, indicating potential overfitting beyond this point.
+- **Testing Accuracy:** Again, follows the validation accuracy pattern closely, peaking around the same depth.
+  
+**Choosing Max Depth**
+
+We choose max_depth = 20 as it generally performs the best as validation data.
+
+**TF-IDF**
+| **Model Name**                   | **Accuracy**    | **Precision** | **Recall** | **F1**    | **AUC**     | 
+| -------------------------------- | --------------- | ------------- | ---------- | --------- | ----------- |
+| `Decision Tree - No Limit`       | 87.02%          | 85.93%         | 86.21%    | 86.07%    | 86.96%      |
+| `Decision Tree - Max_depth = 20` |  87.73%         | 87.18%         | 86.32%    | 86.75%    | 87.64%      |
+
+**Combined**
+| **Model Name**                   | **Accuracy**    | **Precision** | **Recall** | **F1**    | **AUC**     | 
+| -------------------------------- | --------------- | ------------- | ---------- | --------- | ----------- |
+| `Decision Tree - No Limit`       | 95.11%          | 94.95%         | 94.53%    | 94.74%    | 95.07%      |
+| `Decision Tree - Max_depth = 20` |  96.33%         | 95.86%         | 96.28%    | 96.07%    | 96.33%      |
+
+Limiting the depth of the decision tree (Max_depth = 20) improves performance metrics across the board compared to an unlimited depth decision tree, indicating better generalization and reduced overfitting.
+
+### 4.2.2. Logistic Regression
+#### 4.2.2.1. Regularization Parameter - C
+The 'C' parameter in Logistic Regression is crucial for fake news detection as it controls the regularization strength. Regularization helps prevent overfitting by penalizing large coefficients, thus making the model more generalizable to unseen data. A smaller 'C' value implies stronger regularization, leading to simpler models that might underfit the data. Conversely, a larger 'C' value reduces regularization, allowing the model to fit the training data more closely, but risking overfitting. Properly tuning 'C' helps balance the trade-off between bias and variance, ensuring the model accurately classifies new articles as fake or real.
+
+**TF-IDF**
+![1750360661642](https://github.com/user-attachments/assets/0882b0bf-6b32-4d73-8504-d5edb78c0cdc)
+
+**Combined**
+![1750360679019](https://github.com/user-attachments/assets/503c467e-0bae-412d-bc09-6d950f48740a)
+
+**TF-IDF Accuracy vs. C**
+- **Training Accuracy:** Increases steadily with higher values of C, eventually plateauing near perfect accuracy, indicating overfitting at high values.
+- **Validation Accuracy:** Peaks around C = 10^1 and then stabilizes, suggesting the optimal regularization strength.
+- **Testing Accuracy:** Follows a similar pattern to validation accuracy, peaking around the same C value and then plateauing.
+  
+**Combined Accuracy vs. C**
+- **Training Accuracy:** Increases with C and plateaus near perfect accuracy, showing overfitting at high C values.
+- **Validation Accuracy:** Peaks around C = 10^0 to 10^1 and then stabilizes, indicating the optimal range for C.
+- **Testing Accuracy:** Mirrors the validation accuracy trend, peaking around the same C value and then stabilizing.
+  
+**Choosing C**
+- We choose C = 10^3 as it generally performs the best on validation data.
+
+**TF-IDF**
+| **Model Name**                   | **Accuracy**    | **Precision** | **Recall** | **F1**    | **AUC**     | 
+| -------------------------------- | --------------- | ------------- | ---------- | --------- | ----------- |
+| `Logistic Regression - C = 1`    | 93.89%          | 92.14%         | 94.97%    | 93.53%    | 93.96%      |
+| `Logistic Regression - C = 10^3` |  95.06%         | 92.86%         | 96.83%    | 94.80%    | 95.18%      |
+
+**Combined**
+| **Model Name**                   | **Accuracy**    | **Precision** | **Recall** | **F1**    | **AUC**     | 
+| -------------------------------- | --------------- | ------------- | ---------- | --------- | ----------- |
+| `Logistic Regression - C = 1`    | 96.13%          | 94.39%         | 97.48%    | 95.91%    | 96.22%      |
+| `Logistic Regression - C = 10^3` |  97.40%         | 96.55%         | 97.92%    | 97.23%    | 97.44%      |
+
+Less regularization in Logistic Regression may be beneficial for fake news detection because it allows the model to capture the complex and subtle patterns present in fake news articles more effectively. This includes the ability to assign higher weights to important words or phrases indicative of fake news. By allowing more flexibility, the model can better utilize the rich feature set, such as combined text and metadata features, leading to improved performance in distinguishing fake news from real news.
+
+## 4.4. A discussion about high training accuracy 
+Due to the unique characteristics of news text when using TF-IDF (Term Frequency-Inverse Document Frequency), where the number of attributes (features) is very high, traditional machine learning models tend to perform extremely well during training. This high-dimensional feature space allows models to capture the intricate patterns and nuances within the training data, often resulting in a training accuracy of 1 (100%).
+
+For instance, in models like Decision Tree and Logistic Regression, the abundance of features enables these models to fit the training data perfectly. In the case of Decision Trees, the model can create very detailed branches that precisely classify each instance in the training set. Similarly, in Logistic Regression, the model can assign appropriate weights to a large number of features, allowing it to achieve perfect separation of classes in the training data.
+
+However, while a training accuracy of 1 indicates that the model has learned the training data exceptionally well, it also raises concerns about overfitting. Overfitting occurs when the model captures not only the true patterns but also the noise and specific peculiarities of the training data. As a result, the model may fail to generalize to new, unseen data, leading to poor performance on validation and testing datasets. Therefore, achieving a perfect training accuracy highlights the need for careful hyperparameter tuning and regularization to ensure that the model generalizes well and performs reliably on new data.
+
 # 5. Conclusion
 The research in this paper tackles fake news detection through three steps, data pre-processing, feature engineering and classification.
 
